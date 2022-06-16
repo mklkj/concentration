@@ -1,8 +1,100 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #dbd9e2;
+  font: 14px "Urbanist", Helvetica, Arial, sans-serif;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
-  color: #00B7FF;
+  color: #6666ff;
+  text-decoration: none;
+}
+
+.wrapper {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: #d0d0d0 0 2em 1em -0.7em;
+  max-width: 100%;
+  display: flex;
+  max-height: 100%;
+}
+
+.content::before {
+  content: "";
+  display: block;
+  background: url(/images/art.jpg);
+  width: 430px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 600px;
+  background-size: cover;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 950px;
+}
+.content__container {
+  margin-left: 430px;
+}
+.content__title {
+  font-weight: bold;
+  text-align: center;
+  font-size: 24px;
+}
+.content__description {
+  text-align: center;
+  font-size: 14px;
+}
+.content__form {
+  max-width: 300px;
+}
+
+.form__label {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #272727;
+}
+.form__input {
+  display: block;
+  background: #f3f3f4;
+  margin-top: 5px;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  color: #9599a9;
+  font-size: 14px;
+}
+.form__button {
+  padding: 12px;
+  margin-top: 32px;
+  border-radius: 10px;
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+  color: #ffffff;
+  background: #130f26;
+  font-size: 14px;
+}
+.form__footer {
+  font-size: 11px;
+  line-height: 1.4;
 }
