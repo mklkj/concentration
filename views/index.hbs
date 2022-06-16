@@ -4,16 +4,22 @@
 
     <form class="content__form" action="#">
 
-        <label class="form__label" for="name">Name</label>
-        <input class="form__input" id="name" type="text" placeholder="Name">
+        <label class="form__field">
+            <span class="form__label">Name</span>
+            <input class="form__input" id="name" type="text" placeholder="Name"/>
+        </label>
 
-        <label class="form__label" for="username">Username</label>
-        <input class="form__input" id="username" type="text" placeholder="Username">
+        <label class="form__field">
+            <span class="form__label">Username</span>
+            <input class="form__input" id="username" type="text" placeholder="Username">
+        </label>
 
-        <label class="form__label" for="email">Email</label>
-        <input class="form__input" id="email" type="email" placeholder="Enter your email">
+        <label class="form__field">
+            <span class="form__label">Email</span>
+            <input class="form__input" id="email" type="text" placeholder="Enter your email">
+        </label>
 
-        <button class="form__button" type="submit">Create account</button>
+        <button class="form__button" id="register" type="submit">Create account</button>
 
         <p class="form__footer">
             By clicking 'Continue', you acknowledge that you have read and accept the
@@ -21,4 +27,6 @@
             <a href="#">Privacy Policy</a>
         </p>
     </form>
+
+    <script src="/javascripts/registration.js"></script>
 </div>

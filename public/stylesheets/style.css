@@ -83,6 +83,9 @@ a {
   color: #9599a9;
   font-size: 14px;
 }
+.form__error {
+  color: #ff6464;
+}
 .form__button {
   padding: 12px;
   margin-top: 32px;
