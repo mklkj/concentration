@@ -66,7 +66,16 @@ registerButton.addEventListener('click', () => {
             mode: 'no-cors'
         })
             .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(err => console.error(err));
+            .then(data => {
+                if (!data.success) {
+                    return setError(email, data.message);
+                }
+
+                // todo: open success screen
+            })
+            .catch(err => {
+                console.error(err);
+                alert(error.message);
+            });
     }
 });
