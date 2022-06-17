@@ -23,17 +23,17 @@ const clearError = (field) => {
     if (errorMessage) errorMessage.remove();
 };
 
-name.addEventListener('input', e => {
+name.addEventListener('input', () => {
     clearError(name);
 });
-username.addEventListener('input', e => {
+username.addEventListener('input', () => {
     clearError(username);
 });
-email.addEventListener('input', e => {
+email.addEventListener('input', () => {
     clearError(email);
 });
 
-registerButton.addEventListener('click', e => {
+registerButton.addEventListener('click', () => {
     let isError = false;
     if (isNullOrBlank(name.value)) {
         setError(name, "Name field is empty!")
@@ -54,6 +54,19 @@ registerButton.addEventListener('click', e => {
     }
 
     if (!isError) {
-        alert("REGISTERED!")
+        const payload = {
+            name: name.value,
+            username: username.value,
+            email: email.value,
+        }
+        fetch('/users', {
+            method: 'POST',
+            headers: { "Content-Type": "application/json;charset=utf-8" },
+            body: JSON.stringify(payload),
+            mode: 'no-cors'
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.error(err));
     }
 });
