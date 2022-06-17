@@ -33,7 +33,9 @@ email.addEventListener('input', () => {
     clearError(email);
 });
 
-registerButton.addEventListener('click', () => {
+registerButton.addEventListener('click', e => {
+    e.preventDefault();
+
     let isError = false;
     if (isNullOrBlank(name.value)) {
         setError(name, "Name field is empty!")
@@ -61,9 +63,8 @@ registerButton.addEventListener('click', () => {
         }
         fetch('/users', {
             method: 'POST',
-            headers: { "Content-Type": "application/json;charset=utf-8" },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
-            mode: 'no-cors'
         })
             .then(response => response.json())
             .then(data => {
@@ -71,7 +72,7 @@ registerButton.addEventListener('click', () => {
                     return setError(email, data.message);
                 }
 
-                // todo: open success screen
+                window.location = '/success';
             })
             .catch(err => {
                 console.error(err);

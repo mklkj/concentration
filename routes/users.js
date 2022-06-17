@@ -23,7 +23,12 @@ const User = new Schema({
 const UserModel = mongoose.model("Users", User);
 
 router.post('/', function (req, res) {
-    UserModel.exists({username: req.body.email}, (err, isExist) => {
+    console.log(req.body);
+    if (!req.body.email) {
+        return res.status(400).json({success: false, message: "Invalid input"});
+    }
+
+    UserModel.exists({email: req.body.email}, (err, isExist) => {
         if (err) {
             return res.status(400).json({success: false, message: err.toString()});
         }

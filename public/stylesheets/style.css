@@ -8,8 +8,9 @@ html, body {
 }
 
 body {
-  background: #dbd9e2;
   font: 14px "Urbanist", Helvetica, Arial, sans-serif;
+  background: #dbd9e2;
+  color: #222222;
 
   display: flex;
   justify-content: center;
@@ -53,6 +54,11 @@ a {
 .content__container {
   margin-left: 430px;
 }
+.content__header-icon {
+  width: 50px;
+  display: block;
+  margin: 0 auto;
+}
 .content__title {
   font-weight: bold;
   text-align: center;
@@ -61,6 +67,10 @@ a {
 .content__description {
   text-align: center;
   font-size: 14px;
+}
+.content__description--mark {
+  color: #212121;
+  font-weight: 600;
 }
 .content__form {
   max-width: 300px;
@@ -87,6 +97,8 @@ a {
   color: #ff6464;
 }
 .form__button {
+  display: block;
+  text-align: center;
   padding: 12px;
   margin-top: 32px;
   border-radius: 10px;
