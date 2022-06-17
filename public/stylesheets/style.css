@@ -54,6 +54,19 @@ a {
 .content__container {
   margin-left: 430px;
 }
+
+@media (max-width: 951px) {
+  .content {
+    width: 475px;
+  }
+  .content::before {
+    display: none;
+  }
+  .content__container {
+    margin-left: 0;
+  }
+}
+
 .content__header-icon {
   width: 50px;
   display: block;
